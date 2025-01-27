@@ -21,15 +21,18 @@ function adicionarAmigo(){
     ul.appendChild(li);
     limparCampo();
 
-    // Pegando o elemento <ul> onde vamos adicionar os itens
 }
 
 function sortearAmigo() {
-    let amigoSorteado = amigos[parseInt(Math.random() * amigos.length)];
-    let amigoRemovido = amigos.indexOf(amigoSorteado);
-    amigos.splice(amigoRemovido, 1);
-    document.getElementById('listaAmigos').innerHTML = '';
     let resul = document.getElementById('resultado')
+    resul.innerHTML = '';
+    if(amigos.length == 0){
+        alert("Adicione amigos")
+        return;
+    }
+    let amigoSorteado = amigos[parseInt(Math.random() * amigos.length)];
+    amigos = [];
+    document.getElementById('listaAmigos').innerHTML = '';   
     let li = document.createElement("li");
     li.textContent = "O Amigo sorteado foi: " + amigoSorteado;
     resul.appendChild(li);
