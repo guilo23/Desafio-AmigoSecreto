@@ -19,7 +19,6 @@ function adicionarAmigo(){
     let li = document.createElement("li");
     li.textContent = amigo.value;
     ul.appendChild(li);
-    alert("Amigo add sucess");
     limparCampo();
 
     // Pegando o elemento <ul> onde vamos adicionar os itens
